@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: ['@babel/polyfill','./src/js/main.js'],
+    entry: ['@babel/polyfill','./src/js/main.js', './src/sass/main.scss'],
     output: {
         path: path.resolve(__dirname, 'dist/js'),
         filename: 'bundle.js'
@@ -17,7 +17,7 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        "presets": [
+                        presets: [
                             ['@babel/preset-env',
                             {
                                 "targets" :{
@@ -31,6 +31,15 @@ module.exports = {
                         plugins: ['@babel/plugin-proposal-class-properties']
                     }
                 }
+            },
+            {
+                test:/\.scss$/,
+                use: [
+                    "style-loader", // creates style nodes from JS strings
+                    "css-loader",   // translates CSS into CommonJS
+                    "sass-loader"   // compiles Sass to CSS, using Node Sass by default
+                ],
+                exclude: /node_modules/
             }
         ]
     },

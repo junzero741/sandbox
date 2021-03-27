@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/js/main.js',
+    entry: ['@babel/polyfill','./src/js/main.js'],
     output: {
         path: path.resolve(__dirname, 'dist/js'),
         filename: 'bundle.js'
@@ -17,7 +17,17 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env'],
+                        "presets": [
+                            ['@babel/preset-env',
+                            {
+                                "targets" :{
+                                    "ie": 11
+                                },
+                                "useBuiltIns": "usage",
+                                "corejs" : {"version": 3, "proposals" : true}
+                            }
+                        ]
+                    ],
                         plugins: ['@babel/plugin-proposal-class-properties']
                     }
                 }
@@ -27,3 +37,6 @@ module.exports = {
     devtool: 'source-map',
     mode: 'development'
 };
+
+
+

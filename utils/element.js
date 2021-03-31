@@ -1,6 +1,7 @@
 const _ = {
-    $: (selector, base=document) => base.querySelector(selector),
-    $All : (selector, base=document) => base.querySelectorAll(selector),
-    $on : (selector, eventName, callback, option) => selector.addEventListener(eventName, callback, option)
+    $: (selector, root=document) => root.querySelector(selector),
+    $All : (selector, root=document) => root.querySelectorAll(selector),
+    on : (selector, event, func, option) => selector.addEventListenr(event, func, option)
 }
-export default _;
+
+export {_};

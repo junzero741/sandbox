@@ -1,6 +1,6 @@
 function flat(list, newList = []) {
     list.forEach((el) => {
-        if(el.length >= 0) newList.push(...flat(el));
+        if(Array.isArray(el)) newList.push(...flat(el));
         else newList.push(el);
     });
     return newList;

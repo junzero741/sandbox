@@ -24,11 +24,26 @@ function Nav() {
   )
 }
 
+// function article(articleTitle, like, plusLike) {
+
+
+//   return (
+//     <div>
+//       {articleTitle.map((el) => {
+//         <div>
+//           <h3>{el} <span onClick={() => { plusLike(++likeCount) }}>👍</span><span>{likeCount}</span></h3>
+//           <p>{todayMonth} 월 {todayDate} 일 발행</p>
+//           <hr />
+//         </div>
+//       })}
+//     </div>
+//   )
+// }
+
 function List() {
 
   let [articleTitle, changeList] = useState(['남자 코트 추천', '강남 맛집', '리액트란 무엇인가', '타입스크립트란']);
   let [likeCount, plusLike] = useState(0);
-
   const today = new Date();
   const todayMonth = today.getMonth();
   const todayDate = today.getDate();
@@ -40,18 +55,13 @@ function List() {
 
   return (
     <div className="list">
-      <h3>{articleTitle[0]} <span onClick={() => { plusLike(++likeCount) }}>👍</span><span>{likeCount}</span></h3>
-      <p>{todayMonth} 월 {todayDate} 일 발행</p>
-      <hr />
-      <h3>{articleTitle[1]}</h3>
-      <p>{todayMonth} 월 {todayDate} 일 발행</p>
-      <hr />
-      <h3>{articleTitle[2]}</h3>
-      <p>{todayMonth} 월 {todayDate} 일 발행</p>
-      <hr />
-      <h3>{articleTitle[3]}</h3>
-      <p>{todayMonth} 월 {todayDate} 일 발행</p>
-      <hr />
+      {articleTitle.map((el) => {
+        return (<div>
+          <h3>{el} <span onClick={() => { plusLike(++likeCount) }}>👍</span><span>{likeCount}</span></h3>
+          <p>{todayMonth} 월 {todayDate} 일 발행</p>
+          <hr />
+        </div>)
+      })}
       <button onClick={listSort}>글자수 기준 정렬하기</button>
     </div>
   )

@@ -2,11 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 import List from './List.jsx';
 import useFetch from './useFetch.js';
-import Header from './Header';
-import Column from './column';
 
 
-const App = () => {
+
+const Column = () => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState();
 
@@ -38,15 +37,16 @@ const App = () => {
 
 
   return (
-    <div className="App">
-      <Header todos={todos}/>
-      <div className="Columns">
-      <Column/>
-      <Column/>
-      <Column/>
-      </div>
+    <div className="Column">
+    <div className="countInfo"> {todos.length}개 </div>
+      <form action="">
+        <input type="text" name="" onChange={changeInputData} />
+        <button onClick={addTodo}>할일추가</button>
+      </form>
+
+      <List todos={todos} loading={loading} changeTodoStatus = {changeTodoStatus} />
     </div>
   )
 }
 
-export default App;
+export default Column;

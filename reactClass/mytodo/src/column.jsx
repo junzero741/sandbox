@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
 import List from './List.jsx';
 import useFetch from './useFetch.js';
 
@@ -32,7 +31,7 @@ const Column = () => {
   }
 
   useEffect(() => {
-    // console.log("새로운 내용이 렌더되었습니다.", todos);g
+    console.log("새로운 내용이 렌더되었습니다.");
   }, [todos]);
 
 

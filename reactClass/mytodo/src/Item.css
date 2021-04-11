@@ -1,7 +1,0 @@
-.did {
-    text-decoration: line-through;
-}
-
-.todo, .did {
-    cursor: pointer;
-}

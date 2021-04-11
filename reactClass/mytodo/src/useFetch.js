@@ -14,6 +14,7 @@ const useFetch = (callback, url) => {
   
     useEffect(() => {
       fetchInitialData();
+      console.log("data received");
     }, []);
   
     return loading;

@@ -5,9 +5,17 @@
 
 .Columns {
   display:flex;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 }
 
 li {
   list-style: none;
+}
+
+.did {
+  text-decoration: line-through;
+}
+
+.todo, .did {
+  cursor: pointer;
 }

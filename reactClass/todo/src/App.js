@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Header from './Header';
 import data from './data.json';
 import ToDoList from "./ToDoList";
 import ToDoForm from "./ToDoForm";
 import './App.css';
-
+import Carousel from 'gooyle_carousel';
 
 function App() {
-
+  const carouselRef = useRef();
   const [toDoList, setToDoList] = useState(data);
 
 
@@ -33,11 +33,21 @@ function App() {
     setToDoList(filtered);
   }
 
+  // children, 
+  const settings = {
+    slideToScroll: 3,
+    speed: 500,
+    defaultArrow: true,
+    defaultPaging: true,
+  }
+
+
   return (
     <div className="App">
       <Header />
       <ToDoList toDoList={toDoList} handleToggle = {handleToggle} handleFilter = {handleFilter} />
       <ToDoForm addTask = {addTask}/>
+      <Carousel {...settings}/>
     </div>
   );
 }

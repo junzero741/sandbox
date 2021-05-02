@@ -1,0 +1,40 @@
+{
+    "version": "1.0.0-beta.1",
+    "description": "web carousel for front-end",
+    "keywords": ["react", "carousel", "slide"],
+    "homepage": "https://github.com/hayoung123/sidedish",
+    "bugs": {
+        "url" : "https://github.com/hayoung123/sidedish"
+    },
+    "license": "(MIT OR Apache-2.0)",
+    "contributors": [
+        "Kyle <junzero741@gmail.com> (https://github.com/hayoung123)",
+        "Goody <junzero741@gmail.com> (https://github.com/junzero741)"
+    ],
+    "main": "dist/my_module.esm.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/hayoung123/sidedish"
+    },
+    "files": [
+        "dist",
+        "lib",
+        "!dist/test"
+    ],
+    "browser": "./browser/specific/main.js",
+    "dependencies": {
+        "follow-redirects": "^1.4.1",
+        "is-buffer": "^2.0.2",
+        "react-icons/io5": "^4.2.0",
+        "styled-components": "^5.2.3"
+    },
+    "peerDependencies": {
+        "react": "17.0.2",
+        "react-dom": "17.0.2"
+    },
+    "engines": {
+        "node": "*",
+        "npm" : "*"
+      }
+
+}

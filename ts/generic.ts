@@ -44,7 +44,7 @@ function logText5<T>(text: T): T {
 }
 let myStr: GenericLogTextFn = logText5;
 
-interface GenericLogTextFunction {
-	(text: T): T;
-}
-let myString: GenericLogTextFunction<string> = logText5;
+// interface GenericLogTextFunction {
+// 	(text: T): T;
+// }
+// let myString: GenericLogTextFunction<string> = logText5;

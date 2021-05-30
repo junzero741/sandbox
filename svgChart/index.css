@@ -1,0 +1,12 @@
+#svg {
+	border: 1px solid red;
+}
+
+#back {
+	position: absolute;
+	top: 25px;
+	z-index: -1;
+	width: 367px;
+	height: 83px;
+	background-color: red;
+}

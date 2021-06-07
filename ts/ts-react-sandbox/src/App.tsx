@@ -3,6 +3,7 @@ import Counter from "./Counter";
 import MyForm from "./MyForm";
 import ReducerSample from "./ReducerSample";
 import SampleProvider from "./SampleContext";
+import LocalStorage from "./LocalStorage";
 
 function App() {
 	const onClick = (name: string) => {
@@ -19,6 +20,7 @@ function App() {
 			<Counter />
 			<MyForm onSubmit={onSubmit} />
 			<ReducerSample />
+			<LocalStorage />
 		</SampleProvider>
 	);
 }

@@ -1,22 +1,33 @@
+import { RecoilRoot } from "recoil";
 import Grettings from "./Greetings";
 import Counter from "./Counter";
 import MyForm from "./MyForm";
 import ReducerSample from "./ReducerSample";
+import SampleProvider from "./SampleContext";
+import LocalStorage from "./LocalStorage";
+import MapSet from "./MapSet";
+import TodoList from "./TodoList";
 function App() {
 	const onClick = (name: string) => {
-		console.log(`${name} says Hello`);
+		console.log(`${name} says hello`);
 	};
 
 	const onSubmit = (form: { name: string; desc: string }) => {
 		console.log(form);
 	};
+
 	return (
-		<>
-			<Grettings name="goody" optional="bla" onClick={onClick} />
-			<Counter />
-			<MyForm onSubmit={onSubmit} />
-			<ReducerSample />
-		</>
+		<RecoilRoot>
+			<SampleProvider>
+				{/* <Grettings name="goody" optional="bla" onClick={onClick} />
+				<Counter />
+				<MyForm onSubmit={onSubmit} />
+				<ReducerSample />
+				<LocalStorage />
+				<MapSet /> */}
+				<TodoList />
+			</SampleProvider>
+		</RecoilRoot>
 	);
 }
 

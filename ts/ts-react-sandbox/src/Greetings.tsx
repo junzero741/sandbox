@@ -1,25 +1,29 @@
-interface GreetingsProps {
+interface GreetingsProp {
+	onClick: (name:string) => void;
 	name: string;
-	mark: string;
-	optional?: string;
-	onClick: (name: string) => void;
+	optional: string;
+	mark? : string;
 }
 
-const Grettings = ({ name, mark, optional, onClick }: GreetingsProps) => {
-	const handleClick = () => onClick(name);
-	return (
-		<>
-			<div>
-				hello, {name} {mark}
-				{optional && <p>{optional}</p>}
-			</div>
-			<button onClick={handleClick}>Click Me</button>
-		</>
-	);
-};
+const Greetings = ({name, optional, mark, onClick}: GreetingsProp) => {
 
-Grettings.defaultProps = {
-	mark: "!",
-};
+	const handleClick= () => {
+		onClick(name);
+	}
 
-export default Grettings;
+
+	return( 
+	<>
+		<div>hello, {name} {mark}</div>
+		{optional && <div>{optional}</div>}
+		<button onClick={handleClick}>Click Me</button>
+	</>
+	)
+}
+
+export default Greetings;
+
+
+Greetings.defaultProps = {
+	mark: '!'
+}

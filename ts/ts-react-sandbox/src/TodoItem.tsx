@@ -2,7 +2,7 @@ import { useRecoilState } from "recoil";
 import { todoListState } from "./atoms";
 import { replaceItemAtIndex, removeItemAtIndex } from "./utils/editItemAtIndex";
 
-interface ITodoItem {
+interface Props {
 	item: {
 		id: number;
 		text: string;
@@ -10,7 +10,7 @@ interface ITodoItem {
 	};
 }
 
-const TodoItem = ({ item }: ITodoItem) => {
+const TodoItem = ({ item }: Props) => {
 	const { id, text, isCompleted } = item;
 	const [todoList, setTodoList] = useRecoilState(todoListState);
 	const index = todoList.findIndex(listItem => listItem === item);
